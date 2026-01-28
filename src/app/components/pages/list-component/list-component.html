@@ -1,0 +1,11 @@
+@for (spell of spells(); track $index) {
+    <div class="spell-container">
+        <li>
+        <a [routerLink]="['/detail', spell.index]">
+            <h3>{{ spell.name }}</h3>
+            <p>Level: {{ spell.level }}</p>
+        </a>
+    </li>
+    </div>
+    
+}
