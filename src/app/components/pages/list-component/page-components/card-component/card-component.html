@@ -1,0 +1,8 @@
+
+<div class="spell-container">
+        <a [routerLink]="['/detail', spell().index]">
+            <h3>{{ spell().name }}</h3>
+            <p>Level: {{ spell().level }}</p>
+            <a routerLink = "/detail/{{ spell().index }}">Apri dettaglio</a>
+        </a>
+    </div>

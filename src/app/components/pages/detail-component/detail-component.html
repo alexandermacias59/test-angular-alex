@@ -1,1 +1,8 @@
-<p>detail-component works!</p>
+<div class="desc-container">
+<h3>spell({{ spell()?.name }})</h3>
+@for ( paragraph of spell()?.desc ; track $index ) {
+    <p>{{ paragraph }}</p>
+
+}
+</div>
+

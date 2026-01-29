@@ -11,6 +11,9 @@ export const routes: Routes = [
         path: 'list', component: ListComponent
     },
     {
-        path: 'detail', component: DetailComponent
+        path: 'detail/:leonardo', component: DetailComponent
+    },
+    {
+        path: '**', redirectTo: ''
     }
 ];
