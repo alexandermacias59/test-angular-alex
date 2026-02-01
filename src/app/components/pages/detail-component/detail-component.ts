@@ -1,7 +1,7 @@
 import { Component, inject, signal, WritableSignal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SpellService } from '../../../services/spell-services/spell-service';
-import { SpellDetail } from '../../../model/spell-detail';
+import { SpellDetail } from '../../../model/spells-model/spell-detail';
 
 @Component({
   selector: 'app-detail-component',

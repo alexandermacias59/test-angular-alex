@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Spell } from '../../model/spell';
-import { SpellDetail } from '../../model/spell-detail';
+import { Spell } from '../../model/spells-model/spell';
+import { SpellDetail } from '../../model/spells-model/spell-detail';
 @Injectable(
   { providedIn: 'root', }
 )

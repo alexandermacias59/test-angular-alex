@@ -1,0 +1,32 @@
+.monster-container {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: #e0e0e0 2px 2px 5px;
+}
+
+.monster-container h3 {
+    margin: 0 0 8px 0;
+    color: #333;
+}
+
+.monster-container p {
+    margin: 4px 0;
+}
+
+.btn-detail {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #ff6f00;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn-detail:hover {
+    background-color: #e65100;
+}

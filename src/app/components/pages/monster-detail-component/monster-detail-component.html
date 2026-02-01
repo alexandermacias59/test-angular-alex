@@ -1,0 +1,82 @@
+@if (monster()) {
+<div class="monster-detail">
+  <h1>{{ monster()?.name }}</h1>
+  
+  <!-- Basic Info -->
+  <div class="basic-info">
+    <p><strong>Type:</strong> {{ monster()?.type }} @if(monster()?.subtype) { ({{ monster()?.subtype }}) }</p>
+    <p><strong>Size:</strong> {{ monster()?.size }}</p>
+    <p><strong>Alignment:</strong> {{ monster()?.alignment }}</p>
+    <p><strong>Challenge Rating:</strong> {{ monster()?.challenge_rating }}</p>
+  </div>
+
+  <!-- Combat Stats -->
+  <div class="combat-stats">
+    <h3>Combat Stats</h3>
+    <p><strong>Armor Class:</strong> {{ monster()?.armor_class }}</p>
+    <p><strong>Hit Points:</strong> {{ monster()?.hit_points }}</p>
+    @if (monster()?.speed) {
+      <p><strong>Speed:</strong> 
+        @for (speedEntry of monster()!.speed | keyvalue; track speedEntry.key) {
+          {{ speedEntry.key }}: {{ speedEntry.value }}{{ $last ? '' : ', ' }}
+        }
+      </p>
+    }
+  </div>
+
+  <!-- Ability Scores -->
+  <div class="ability-scores">
+    <h3>Ability Scores</h3>
+    <div class="scores-grid">
+      <div><strong>STR:</strong> {{ monster()?.strength }}</div>
+      <div><strong>DEX:</strong> {{ monster()?.dexterity }}</div>
+      <div><strong>CON:</strong> {{ monster()?.constitution }}</div>
+      <div><strong>INT:</strong> {{ monster()?.intelligence }}</div>
+      <div><strong>WIS:</strong> {{ monster()?.wisdom }}</div>
+      <div><strong>CHA:</strong> {{ monster()?.charisma }}</div>
+    </div>
+  </div>
+
+  <!-- Special Abilities -->
+  @if (monster()?.special_abilities && monster()!.special_abilities.length > 0) {
+    <div class="special-abilities">
+      <h3>Special Abilities</h3>
+      @for (ability of monster()!.special_abilities; track ability.name) {
+        <div class="ability">
+          <h4>{{ ability.name }}</h4>
+          <p>{{ ability.desc }}</p>
+        </div>
+      }
+    </div>
+  }
+
+  <!-- Actions -->
+  @if (monster()?.actions && monster()!.actions.length > 0) {
+    <div class="actions">
+      <h3>Actions</h3>
+      @for (action of monster()!.actions; track action.name) {
+        <div class="action">
+          <h4>{{ action.name }}</h4>
+          <p>{{ action.desc }}</p>
+        </div>
+      }
+    </div>
+  }
+
+  <!-- Legendary Actions -->
+  @if (monster()?.legendary_actions && monster()!.legendary_actions.length > 0) {
+    <div class="legendary-actions">
+      <h3>Legendary Actions</h3>
+      @for (legendary of monster()!.legendary_actions; track legendary.name) {
+        <div class="legendary-action">
+          <h4>{{ legendary.name }}</h4>
+          <p>{{ legendary.desc }}</p>
+        </div>
+      }
+    </div>
+  }
+</div>
+} @else {
+  <p>Loading monster details...</p>
+}
+

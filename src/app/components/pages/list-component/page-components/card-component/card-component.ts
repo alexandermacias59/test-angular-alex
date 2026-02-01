@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Spell } from '../../../../../model/spell';
+import { Spell } from '../../../../../model/spells-model/spell';
 import { RouterLink } from '@angular/router';
 
 @Component({
